@@ -1,0 +1,1 @@
+- [Portfolio delivery](portfolio-delivery.md) — keep the public portfolio on its existing static GitHub Pages setup and preserve its contact-form behavior.

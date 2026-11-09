@@ -8,6 +8,7 @@ const projects = [
     description:
       "Final-year IoT project using Raspberry Pi and camera modules with a custom-trained YOLOv8 model for real-time object detection and proactive alerts.",
     stack: ["Raspberry Pi", "YOLOv8", "Python", "IoT"],
+    repository: null,
     featured: true,
   },
   {
@@ -17,6 +18,7 @@ const projects = [
     description:
       "Cross-platform Flutter app with authentication, book management, and RESTful API integration for real-time data updates and a considered reading experience.",
     stack: ["Flutter", "Dart", "REST API", "Firebase"],
+    repository: null,
   },
   {
     number: "03",
@@ -25,6 +27,7 @@ const projects = [
     description:
       "A grocery list app with Firebase real-time database support. Add, update, and delete items with state management for a cross-device experience.",
     stack: ["Flutter", "Firebase", "Dart"],
+    repository: "https://github.com/sinannisar/Grocery_shopping_list",
   },
   {
     number: "04",
@@ -33,6 +36,7 @@ const projects = [
     description:
       "Personal finance tracker with expense categorisation, data visualisation charts, and state management for cross-device performance.",
     stack: ["Flutter", "Dart", "Charts"],
+    repository: "https://github.com/sinannisar/expense_tracker",
   },
   {
     number: "05",
@@ -41,6 +45,7 @@ const projects = [
     description:
       "Currency conversion app using Flutter and REST APIs, with error handling and a clean, responsive interface.",
     stack: ["Flutter", "REST API", "Dart"],
+    repository: "https://github.com/sinannisar/MoneyConverter",
   },
   {
     number: "06",
@@ -49,6 +54,7 @@ const projects = [
     description:
       "Anti-theft mobile app integrated with IoT sensors for real-time alert notifications and smart-home security.",
     stack: ["Flutter", "IoT", "Sensors", "Dart"],
+    repository: null,
   },
 ];
 
@@ -147,7 +153,7 @@ export function WorkLed() {
         .wl-project h3{font:600 22px/1.12 'Space Grotesk',sans-serif;letter-spacing:-.045em;margin:23px 0 9px}.wl-project p{color:#756e65;font-size:11px;line-height:1.7;margin:0;max-width:510px}
         .wl-project-foot{margin-top:auto;padding-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
         .wl-project .wl-tags{margin:0;gap:5px}.wl-project .wl-tags span{color:#6f6860;border-color:#d6cec3;padding:5px 7px;font-size:8px}
-        .wl-small-gh{font:9px 'DM Mono',monospace;color:#726960!important;white-space:nowrap}.wl-small-gh:hover{color:var(--red)!important}
+        .wl-small-gh{font:9px 'DM Mono',monospace;color:#726960!important;white-space:nowrap}.wl-small-gh:hover{color:var(--red)!important}.wl-repo-unavailable{color:#8f877e!important}
         .wl-about{padding:70px clamp(22px,5vw,76px);display:grid;grid-template-columns:.72fr 1.28fr;gap:50px;border-bottom:1px solid var(--line)}
         .wl-about h2{font:600 clamp(30px,4vw,44px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.06em;margin:0}.wl-about-intro{font-size:13px;line-height:1.9;color:#6d665e}.wl-about-intro p{margin:0 0 13px}.wl-about-intro strong{color:var(--ink)}
         .wl-languages{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.wl-languages span{font:9px 'DM Mono',monospace;border-bottom:1px solid var(--red);padding:7px 1px;margin-right:13px;color:#756e65}
@@ -219,7 +225,7 @@ export function WorkLed() {
                 <h3>Bee Hive Monitoring System</h3>
                 <p>Final-year IoT project using Raspberry Pi and camera modules with a custom-trained YOLOv8 model for real-time object detection and proactive alerts.</p>
                 <div className="wl-tags"><span>Raspberry Pi</span><span>YOLOv8</span><span>Python</span><span>IoT</span></div>
-                <a className="wl-gh" href="https://github.com/sinannisar" target="_blank" rel="noreferrer">Explore GitHub profile ↗</a>
+                <span className="wl-gh wl-repo-unavailable">Repository not published</span>
               </div>
               <div className="wl-feature-art" aria-label="Abstract monitoring network illustration" role="img">
                 <div className="wl-art-grid" /><div className="wl-hive"><div className="wl-hive-core">FIELD<br />SENSOR</div><i className="wl-node n1" /><i className="wl-node n2" /><i className="wl-node n3" /></div><div className="wl-art-caption">Raspberry Pi / vision / alert loop</div>
@@ -229,7 +235,7 @@ export function WorkLed() {
               <article className="wl-project" key={project.number}>
                 <div className="wl-project-top"><span>{project.type}</span><span>{project.number} / 06</span></div>
                 <h3>{project.name}</h3><p>{project.description}</p>
-                <div className="wl-project-foot"><div className="wl-tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div><a className="wl-small-gh" href="https://github.com/sinannisar" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+                <div className="wl-project-foot"><div className="wl-tags">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>{project.repository ? <a className="wl-small-gh" href={project.repository} target="_blank" rel="noopener noreferrer">View repository ↗</a> : <span className="wl-small-gh wl-repo-unavailable">Repository not published</span>}</div>
               </article>
             ))}</div>
           </section>
